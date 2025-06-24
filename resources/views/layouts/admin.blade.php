@@ -35,6 +35,9 @@
                 <a href="{{ route('admin.laporan.form') }}" class="block px-3 py-2 rounded {{ Request::is('admin/laporan*') ? 'bg-blue-600 text-white font-semibold' : 'hover:bg-slate-700' }}">
                     Cetak Laporan
                 </a>
+                <a href="{{ route('admin.feedback.index') }}" class="block px-3 py-2 rounded {{ Request::is('admin/laporan*') ? 'bg-blue-600 text-white font-semibold' : 'hover:bg-slate-700' }}">
+                    Lihat Feedback
+                </a>
             </nav>
         </div>
 

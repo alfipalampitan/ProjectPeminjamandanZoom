@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LaporanPdfController;
 use App\Http\Controllers\PeminjamanController;
@@ -110,4 +111,13 @@ Route::get('/register-pegawai', [RegisterPegawaiController::class, 'create'])->n
 Route::post('/register-pegawai', [RegisterPegawaiController::class, 'store'])->name('pegawai.register.store');
 Route::get('/register', [RegisterPegawaiController::class, 'formRegister'])->name('register');
 
+// Untuk Pegawai
+Route::middleware(['auth', 'role:pegawai'])->group(function () {
+    Route::get('/feedback', [FeedbackController::class, 'create'])->name('feedback.create');
+    Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+});
 
+// Untuk Admin Melihat Feedback
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('admin.feedback.index');
+});

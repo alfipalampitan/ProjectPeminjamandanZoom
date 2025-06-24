@@ -13,6 +13,7 @@
         <nav class="space-y-2">
             <a href="/dashboard-pegawai" class="block px-2 py-1 hover:bg-blue-100 rounded">Dashboard</a>
             <a href="/pegawai/status" class="block px-2 py-1 hover:bg-blue-100 rounded">Lihat Status Pengajuan dan Permintaan</a>
+            <a href="/feedback" class="block px-2 py-1 hover:bg-blue-100 rounded">Kasih Feedback</a>
             <form action="{{ route('logout') }}" method="POST" class="mt-4">
                 @csrf
                 <button class="w-full text-left px-2 py-1 text-red-600 hover:bg-red-100 rounded">Logout</button>
